@@ -1,182 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sirplumb Plumbing Solutions | Plumbing Services in South Africa</title>
-    <meta name="keywords" content="Emergency Repairs, Leak Detection, Pipe Installation, Drain Cleaning, Geyser Services">
-    <meta name="description" content="Sirplumb Plumbing Solutions provides professional plumbing services in South Africa. Your Pipes, Our Priority. Call now for a free quote!">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root { --primary: #0E4C92; --secondary: #5DADE2; --accent: #E74C3C; --dark: #073666; --light: #EBF5FB; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Open Sans', sans-serif; line-height: 1.6; color: #333; }
-        h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
-        nav { position: fixed; top: 0; width: 100%; padding: 0.5rem 5%; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 2px solid var(--primary); z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
-        .logo { display: flex; align-items: center; }
-        .logo img { height: 60px; width: auto; }
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
-        .nav-links a { color: var(--dark); text-decoration: none; font-weight: 500; transition: color 0.3s; }
-        .nav-links a:hover { color: var(--primary); }
-        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 5% 80px; background: linear-gradient(135deg, var(--light) 0%, #fff 100%); position: relative; overflow: hidden; }
-        .hero::before { content: ''; position: absolute; top: -50%; right: -20%; width: 600px; height: 600px; background: var(--primary); opacity: 0.05; border-radius: 50%; }
-        .hero-content { max-width: 800px; position: relative; z-index: 1; }
-        .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); color: var(--dark); margin-bottom: 1rem; }
-        .hero-subtitle { font-size: 1.5rem; color: var(--primary); margin-bottom: 1.5rem; }
-        .hero p { font-size: 1.2rem; color: #666; margin-bottom: 2rem; }
-        .cta-button { display: inline-block; padding: 1rem 2.5rem; background: var(--primary); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; transition: all 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-        .cta-button:hover { background: var(--dark); transform: translateY(-2px); }
-        .services { padding: 5rem 5%; background: #fff; }
-        .section-title { text-align: center; font-size: 2.5rem; color: var(--dark); margin-bottom: 3rem; }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
-        .service-card { padding: 2rem; border-radius: 15px; background: var(--light); transition: all 0.3s; text-align: center; }
-        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .service-card i { font-size: 3rem; color: var(--primary); margin-bottom: 1rem; }
-        .service-card h3 { color: var(--dark); margin-bottom: 0.5rem; }
-        .trust-signals { padding: 5rem 5%; background: var(--light); }
-        .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
-        .trust-card { padding: 2rem; text-align: center; background: #fff; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-        .trust-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem; }
-        .trust-card h3 { color: var(--dark); margin-bottom: 0.5rem; }
-        .about { padding: 5rem 5%; background: #fff; }
-        .about-content { max-width: 1000px; margin: 0 auto; text-align: center; }
-        .about h2 { color: var(--dark); margin-bottom: 1.5rem; }
-        .about p { font-size: 1.1rem; color: #555; margin-bottom: 1rem; }
-        .gallery { padding: 5rem 5%; background: var(--light); }
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto; }
-        .gallery-grid img { max-width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .contact { padding: 5rem 5%; background: var(--dark); color: white; text-align: center; }
-        .contact h2 { margin-bottom: 2rem; }
-        .contact-info { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-top: 2rem; }
-        .contact-item { display: flex; align-items: center; gap: 0.5rem; }
-        .contact-item i { color: var(--accent); font-size: 1.5rem; }
-        footer { padding: 2rem 5%; background: #1a1a1a; color: #999; text-align: center; }
-        footer a { color: var(--accent); text-decoration: none; }
-        @media (max-width: 768px) { .nav-links { display: none; } .hero h1 { font-size: 2rem; } .logo img { height: 50px; } .contact-info { flex-direction: column; gap: 1rem; } }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sirplumb Plumbing Solutions | South Africa</title>
+  <meta name="description" content="Professional plumbing, gas fitting, geyser installation and more. Your Pipes, Our Priority." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root{--blue:#0E4C92;--blue-light:#5DADE2;--blue-dark:#073666;--bg:#EBF5FB;--muted:#666;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Open Sans',sans-serif;color:#1a1a2e;background:#fff;line-height:1.6;}
+    a{text-decoration:none;}
+    img{display:block;max-width:100%;}
+
+    nav{position:fixed;top:0;width:100%;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:3px solid var(--blue);height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 5%;}
+    .nav-logo img{height:54px;object-fit:contain;}
+    .nav-links{display:flex;gap:2rem;list-style:none;}
+    .nav-links a{color:var(--blue-dark);font-weight:600;font-size:.88rem;font-family:'Montserrat',sans-serif;transition:color .2s;}
+    .nav-links a:hover{color:var(--blue);}
+    .nav-cta{display:flex;gap:.6rem;}
+    .btn{display:inline-flex;align-items:center;gap:.4rem;border-radius:50px;font-weight:700;font-size:.88rem;cursor:pointer;transition:all .2s;font-family:'Montserrat',sans-serif;padding:.55rem 1.2rem;border:none;}
+    .btn-blue{background:var(--blue);color:#fff;}
+    .btn-blue:hover{background:var(--blue-dark);transform:translateY(-1px);}
+    .btn-green{background:#25D366;color:#fff;}
+    .btn-green:hover{background:#1da851;transform:translateY(-1px);}
+    .btn-lg{padding:.9rem 2rem!important;font-size:1rem!important;border-radius:10px!important;}
+    .btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5);}
+    .btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.08);}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+    .hamburger span{width:24px;height:2px;background:var(--blue);border-radius:2px;}
+    .mobile-menu{display:none;position:fixed;top:70px;left:0;right:0;background:#fff;border-bottom:2px solid var(--blue);padding:1.5rem 5%;z-index:999;flex-direction:column;gap:1.25rem;}
+    .mobile-menu.open{display:flex;}
+    .mobile-menu a{color:var(--blue-dark);font-weight:600;font-family:'Montserrat',sans-serif;}
+
+    .hero{min-height:100vh;background:linear-gradient(135deg,var(--blue-dark) 0%,#0a3060 55%,var(--blue) 100%);display:flex;align-items:center;padding:100px 5% 80px;position:relative;overflow:hidden;}
+    .hero::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:70px;background:#fff;clip-path:ellipse(55% 100% at 50% 100%);}
+    .hero-inner{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
+    .badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:50px;padding:.4rem 1rem;font-size:.75rem;color:rgba(255,255,255,.9);font-weight:700;margin-bottom:1.25rem;font-family:'Montserrat',sans-serif;letter-spacing:.08em;text-transform:uppercase;}
+    .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;animation:pulse 2s infinite;flex-shrink:0;}
+    @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,.5);}50%{box-shadow:0 0 0 6px rgba(34,197,94,0);}}
+    .hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(2.2rem,4.5vw,3.4rem);font-weight:900;color:#fff;line-height:1.1;letter-spacing:-.02em;margin-bottom:.6rem;}
+    .hero h1 span{color:var(--blue-light);}
+    .hero-tag{font-size:1rem;font-weight:700;color:rgba(255,255,255,.65);margin-bottom:1rem;font-family:'Montserrat',sans-serif;}
+    .hero p{color:rgba(255,255,255,.65);font-size:.95rem;line-height:1.7;margin-bottom:1.75rem;max-width:440px;}
+    .hero-btns{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:2rem;}
+    .hero-stats{display:flex;gap:2rem;}
+    .hero-stat strong{display:block;font-size:1.5rem;font-weight:900;color:#fff;font-family:'Montserrat',sans-serif;}
+    .hero-stat span{font-size:.72rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;}
+    .hero-img{width:100%;border-radius:18px;object-fit:cover;max-height:500px;box-shadow:0 28px 56px rgba(0,0,0,.4);border:3px solid rgba(255,255,255,.1);}
+
+    .strip{background:var(--blue);padding:.9rem 5%;}
+    .strip-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+    .strip strong{color:#fff;font-family:'Montserrat',sans-serif;}
+    .strip-btns{display:flex;gap:.6rem;}
+    .s-call{background:#fff;color:var(--blue);border-radius:7px;padding:.5rem 1.1rem;font-weight:700;font-size:.85rem;font-family:'Montserrat',sans-serif;}
+    .s-wa{background:#25D366;color:#fff;border-radius:7px;padding:.5rem 1.1rem;font-weight:700;font-size:.85rem;font-family:'Montserrat',sans-serif;}
+
+    .sec{padding:80px 5%;}
+    .sec-light{background:var(--bg);}
+    .sec-white{background:#fff;}
+    .sec-dark{background:var(--blue-dark);}
+    .inner{max-width:1200px;margin:0 auto;}
+    .sec-label{font-size:.72rem;font-weight:700;letter-spacing:.18em;color:var(--blue);text-transform:uppercase;margin-bottom:.55rem;display:block;font-family:'Montserrat',sans-serif;}
+    .sec-label-w{color:var(--blue-light);}
+    .sec-head{margin-bottom:2.5rem;}
+    .sec-head.center{text-align:center;}
+    h2{font-family:'Montserrat',sans-serif;font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:800;color:var(--blue-dark);letter-spacing:-.02em;line-height:1.15;}
+    h2.w{color:#fff;}
+    .sub{color:var(--muted);font-size:.95rem;line-height:1.65;margin-top:.6rem;max-width:500px;}
+    .sub.w{color:rgba(255,255,255,.55);}
+    .center .sub{margin-left:auto;margin-right:auto;}
+
+    .srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;}
+    .srv-card{background:#fff;border:1.5px solid #dde8f5;border-radius:14px;padding:1.4rem;transition:all .25s;}
+    .srv-card:hover{border-color:var(--blue);box-shadow:0 8px 28px rgba(14,76,146,.1);transform:translateY(-3px);}
+    .srv-icon{font-size:1.8rem;margin-bottom:.65rem;}
+    .srv-card h3{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.92rem;color:var(--blue-dark);}
+
+    .gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.9rem;}
+    .gal-item{border-radius:14px;overflow:hidden;aspect-ratio:1;position:relative;}
+    .gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
+    .gal-item:hover img{transform:scale(1.06);}
+    .gal-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,54,102,.7),transparent 60%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:.85rem;}
+    .gal-item:hover .gal-ov{opacity:1;}
+    .gal-ov span{color:#fff;font-weight:600;font-size:.8rem;font-family:'Montserrat',sans-serif;}
+
+    .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;}
+    .trust-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:1.5rem;text-align:center;}
+    .trust-card .ti{font-size:2rem;margin-bottom:.7rem;}
+    .trust-card h3{font-family:'Montserrat',sans-serif;color:#fff;font-weight:700;font-size:.92rem;margin-bottom:.25rem;}
+    .trust-card p{color:rgba(255,255,255,.5);font-size:.82rem;}
+
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;}
+    .about-text p{color:#555;font-size:.95rem;line-height:1.75;margin-bottom:.75rem;}
+    .checks{list-style:none;margin-top:1rem;display:flex;flex-direction:column;gap:.5rem;}
+    .checks li{display:flex;align-items:center;gap:.6rem;padding:.6rem .9rem;background:var(--bg);border-radius:9px;font-weight:500;font-size:.86rem;}
+    .checks li::before{content:'✅';flex-shrink:0;}
+
+    .con-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:760px;margin:0 auto 2.5rem;}
+    .con-card{background:#fff;border:1.5px solid #dde8f5;border-radius:14px;padding:1.5rem;text-align:center;transition:all .2s;display:block;}
+    .con-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(14,76,146,.1);}
+    .con-card .ci{font-size:2rem;margin-bottom:.6rem;}
+    .con-card .cl{font-size:.68rem;font-weight:700;letter-spacing:.12em;color:#999;text-transform:uppercase;margin-bottom:.3rem;font-family:'Montserrat',sans-serif;}
+    .con-card .cv{font-weight:700;font-size:.9rem;}
+    .cta-box{background:linear-gradient(135deg,var(--blue-dark),var(--blue));border-radius:18px;padding:2.5rem;text-align:center;}
+    .cta-box h3{font-family:'Montserrat',sans-serif;color:#fff;font-weight:800;font-size:1.4rem;margin-bottom:.5rem;}
+    .cta-box p{color:rgba(255,255,255,.6);font-size:.9rem;margin-bottom:1.5rem;}
+    .cta-btns{display:flex;gap:.85rem;justify-content:center;flex-wrap:wrap;}
+
+    footer{background:#0a1628;padding:2rem 5%;}
+    .foot-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+    .foot-inner img{height:42px;}
+    .foot-links{display:flex;gap:1.5rem;flex-wrap:wrap;}
+    .foot-links a{color:rgba(255,255,255,.5);font-size:.82rem;}
+    .foot-copy{color:rgba(255,255,255,.3);font-size:.75rem;}
+
+    @media(max-width:900px){
+      .hero-inner{grid-template-columns:1fr;}
+      .hero-img-wrap{display:none;}
+      .srv-grid{grid-template-columns:1fr 1fr;}
+      .trust-grid{grid-template-columns:1fr 1fr;}
+      .about-grid{grid-template-columns:1fr;gap:2rem;}
+      .gal-grid{grid-template-columns:repeat(2,1fr);}
+    }
+    @media(max-width:768px){
+      .nav-links,.nav-cta{display:none;}
+      .hamburger{display:flex;}
+      .srv-grid{grid-template-columns:1fr;}
+      .con-grid{grid-template-columns:1fr;max-width:100%;}
+      .strip-inner{justify-content:center;text-align:center;}
+      .sec{padding:55px 5%;}
+    }
+    @media(max-width:480px){
+      .trust-grid,.gal-grid{grid-template-columns:1fr 1fr;}
+      .cta-btns{flex-direction:column;align-items:center;}
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <a href="#" class="logo"><img src="images/logo.jpg" alt="Sirplumb Plumbing Solutions Logo"></a>
-        <ul class="nav-links">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+
+<!-- NAV -->
+<nav>
+  <a href="#top" class="nav-logo"><img src="https://media.base44.com/images/public/69cdab6a03a7c5762e21e886/67668ae0d_6239956434888101962.jpg" alt="Sirplumb" /></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#work">Our Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="https://wa.me/27000000000?text=Hi%20Sirplumb%2C%20I%20need%20a%20plumber." target="_blank" class="btn btn-green">💬 WhatsApp</a>
+    <a href="tel:0000000000" class="btn btn-blue">📞 Call Us</a>
+  </div>
+  <div class="hamburger" onclick="document.getElementById('mm').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mm">
+  <a href="#services" onclick="document.getElementById('mm').classList.remove('open')">Services</a>
+  <a href="#work" onclick="document.getElementById('mm').classList.remove('open')">Our Work</a>
+  <a href="#about" onclick="document.getElementById('mm').classList.remove('open')">About</a>
+  <a href="#contact" onclick="document.getElementById('mm').classList.remove('open')">Contact</a>
+  <a href="tel:0000000000" class="btn btn-blue" style="justify-content:center;">📞 Call Us</a>
+</div>
+
+<!-- HERO -->
+<section id="top" class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="badge"><div class="dot"></div>Available 24/7</div>
+      <h1>Your Pipes,<br /><span>Our Priority.</span></h1>
+      <p class="hero-tag">Sirplumb Plumbing Solutions</p>
+      <p>Professional plumbing, gas fitting and geyser services across South Africa.</p>
+      <div class="hero-btns">
+        <a href="tel:0000000000" class="btn btn-blue btn-lg">📞 Free Quote</a>
+        <a href="https://wa.me/27000000000?text=Hi%20Sirplumb%2C%20I%20need%20a%20plumber." target="_blank" class="btn btn-outline btn-lg">💬 WhatsApp</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><strong>24/7</strong><span>Emergency</span></div>
+        <div class="hero-stat"><strong>100%</strong><span>Guaranteed</span></div>
+        <div class="hero-stat"><strong>Free</strong><span>Quotes</span></div>
+      </div>
+    </div>
+    <div class="hero-img-wrap">
+      <img class="hero-img" src="https://media.base44.com/images/public/69cdab6a03a7c5762e21e886/b2dfc1072_6239956434888101969.jpg" alt="Sirplumb professional plumber" />
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-inner">
+    <strong>Need a plumber right now?</strong>
+    <div class="strip-btns">
+      <a href="tel:0000000000" class="s-call">📞 Call Now</a>
+      <a href="https://wa.me/27000000000?text=Hi%20Sirplumb%2C%20I%20need%20a%20plumber." target="_blank" class="s-wa">💬 WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="sec sec-white" id="services">
+  <div class="inner">
+    <div class="sec-head">
+      <span class="sec-label">What We Do</span>
+      <h2>Services</h2>
+    </div>
+    <div class="srv-grid">
+      <div class="srv-card"><div class="srv-icon">🚨</div><h3>Emergency Repairs</h3></div>
+      <div class="srv-card"><div class="srv-icon">🔍</div><h3>Leak Detection</h3></div>
+      <div class="srv-card"><div class="srv-icon">🔩</div><h3>Pipe Installation</h3></div>
+      <div class="srv-card"><div class="srv-icon">🚰</div><h3>Drain Cleaning</h3></div>
+      <div class="srv-card"><div class="srv-icon">🌡️</div><h3>Geyser Services</h3></div>
+      <div class="srv-card"><div class="srv-icon">🔥</div><h3>Gas Installation</h3></div>
+      <div class="srv-card"><div class="srv-icon">💧</div><h3>Water Filtration</h3></div>
+      <div class="srv-card"><div class="srv-icon">🛁</div><h3>Bathroom Renovations</h3></div>
+      <div class="srv-card"><div class="srv-icon">🏠</div><h3>Maintenance Contracts</h3></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY — 8 unique images, no repeats -->
+<section class="sec sec-light" id="work">
+  <div class="inner">
+    <div class="sec-head center">
+      <span class="sec-label">Real Jobs</span>
+      <h2>Our Work</h2>
+    </div>
+    <div class="gal-grid">
+      <div class="gal-item">
+        <img src="https://media.base44.com/images/public/69cdab6a03a7c5762e21e886/f0f16eca5_6242423322369003303.jpg" alt="Geyser installation" />
+        <div class="gal-ov"><span>Geyser Installation</span></div>
+      </div>
+      <div class="gal-item">
+        <img src="https://media.base44.com/images/public/69cdab6a03a7c5762e21e886/bc598efa9_6242423322369003305.jpg" alt="Gas hob" />
+        <div class="gal-ov"><span>Gas Hob</span></div>
+      </div>
+      <div class="gal-item">
+        <img src="https://media.base44.com/images/public/69cdab6a03a7c5762e21e886/13aa19c05_6242423322369003304.jpg" alt="Gas installation" />
+        <div class="gal-ov"><span>Gas Installation</span></div>
+      </div>
+      <div class="gal-item">
+        <img src="https://media.base44.com/images/public/69cdab6a03a7c5762e21e886/83820543a_6242423322369003307.jpg" alt="Gas geyser" />
+        <div class="gal-ov"><span>Gas Geyser</span></div>
+      </div>
+      <div class="gal-item">
+        <img src="https://media.base44.com/images/public/69cdab6a03a7c5762e21e886/49ff50ea5_6242423322369003308.jpg" alt="Water filtration" />
+        <div class="gal-ov"><span>Water Filtration</span></div>
+      </div>
+      <div class="gal-item">
+        <img src="https://media.base44.com/images/public/69cdab6a03a7c5762e21e886/3b30a02d1_6242423322369003317.jpg" alt="Solar geyser prep" />
+        <div class="gal-ov"><span>Solar Geyser</span></div>
+      </div>
+      <div class="gal-item">
+        <img src="https://media.base44.com/images/public/69cdab6a03a7c5762e21e886/b3b3ee42e_6242423322369003316.jpg" alt="Bathroom renovation" />
+        <div class="gal-ov"><span>Bathroom Renovation</span></div>
+      </div>
+      <div class="gal-item">
+        <img src="https://media.base44.com/images/public/69cdab6a03a7c5762e21e886/67668ae0d_6239956434888101962.jpg" alt="Sirplumb" style="object-fit:contain;background:#EBF5FB;padding:1rem;" />
+        <div class="gal-ov"><span>Sirplumb Solutions</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="sec sec-dark">
+  <div class="inner">
+    <div class="sec-head center">
+      <span class="sec-label sec-label-w">Why Choose Us</span>
+      <h2 class="w">Plumbing you can count on.</h2>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-card"><div class="ti">🛡️</div><h3>Licensed & Insured</h3><p>Fully certified professionals.</p></div>
+      <div class="trust-card"><div class="ti">⚡</div><h3>Fast Response</h3><p>On time, 24/7 for emergencies.</p></div>
+      <div class="trust-card"><div class="ti">✅</div><h3>Guaranteed</h3><p>Done right, every time.</p></div>
+      <div class="trust-card"><div class="ti">💰</div><h3>Free Quotes</h3><p>No hidden costs.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec sec-white" id="about">
+  <div class="inner">
+    <div class="about-grid">
+      <div class="about-text">
+        <span class="sec-label">About Us</span>
+        <h2>Trusted plumbing,<br />done properly.</h2>
+        <p>Sirplumb serves homes and businesses across South Africa with expert plumbing, gas fitting and geyser services.</p>
+        <ul class="checks">
+          <li>Qualified & certified plumbers</li>
+          <li>Gas & solar installation specialists</li>
+          <li>Water filtration & pump experts</li>
+          <li>24/7 emergency callouts</li>
+          <li>Free quotes, no obligation</li>
         </ul>
-    </nav>
-    
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Sirplumb Plumbing Solutions</h1>
-            <img src="images/hero-worker.jpg" alt="Sirplumb Professional Plumber at Work" style="max-width: 400px; width: 100%; border-radius: 20px; margin: 1.5rem auto; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
-            <p class="hero-subtitle">Your Pipes, Our Priority</p>
-            <p>Professional plumbing services in South Africa. Quality workmanship, reliable service, competitive prices.</p>
-            <a href="#contact" class="cta-button">Get Your Free Quote Now</a>
-        </div>
-    </section>
-    
-    <section class="services" id="services">
-        <h2 class="section-title">Our Services</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <i class="fas fa-check-circle"></i>
-                <h3>Emergency Repairs</h3>
-                <p>Get immediate help when you need it most - 24/7 emergency response</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-check-circle"></i>
-                <h3>Leak Detection</h3>
-                <p>Professional leak detection with quality guarantee.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-check-circle"></i>
-                <h3>Pipe Installation</h3>
-                <p>Professional pipe installation with quality guarantee.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-check-circle"></i>
-                <h3>Drain Cleaning</h3>
-                <p>Professional drain cleaning with quality guarantee.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-check-circle"></i>
-                <h3>Geyser Services</h3>
-                <p>Professional geyser services with quality guarantee.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-check-circle"></i>
-                <h3>Bathroom Renovations</h3>
-                <p>Professional bathroom renovations with quality guarantee.</p>
-            </div>
-        </div>
-    </section>
-    
-    <section class="trust-signals" id="trust">
-        <h2 class="section-title">Why Choose Us</h2>
-        <div class="trust-grid">
-            <div class="trust-card">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Licensed & Insured</h3>
-                <p>Fully qualified professionals with proper insurance for your protection.</p>
-            </div>
-            <div class="trust-card">
-                <i class="fas fa-clock"></i>
-                <h3>Prompt Service</h3>
-                <p>We value your time - arrive on schedule and complete work efficiently.</p>
-            </div>
-            <div class="trust-card">
-                <i class="fas fa-check-double"></i>
-                <h3>Quality Guarantee</h3>
-                <p>Our work comes with a satisfaction guarantee - we don't leave until it's right.</p>
-            </div>
-            <div class="trust-card">
-                <i class="fas fa-headset"></i>
-                <h3>Friendly Support</h3>
-                <p>From quote to completion, we communicate clearly and professionally.</p>
-            </div>
-        </div>
-    </section>
-    
-    <section class="about" id="about">
-        <div class="about-content">
-            <h2>About Sirplumb Plumbing Solutions</h2>
-            <p>Welcome to Sirplumb Plumbing Solutions, your trusted plumbing service provider in South Africa. With years of experience and a commitment to excellence, we deliver top-quality services that exceed expectations.</p>
-            <p>Our team of skilled professionals is dedicated to providing reliable, efficient, and affordable solutions for all your plumbing needs.</p>
-        </div>
-    </section>
-    
-    <section class="gallery" id="work">
-        <h2 class="section-title">Our Work</h2>
-        <div class="gallery-grid">
-            <img src="images/plumbing-work-v2.jpg" alt="Plumbing Work">
-            <img src="images/additional-work.jpg" alt="Additional Work">
-            <img src="images/bathroom-renovation.jpg" alt="Bathroom Renovation">
-        </div>
-    </section>
-    
-    <section class="contact" id="contact">
-        <h2>Contact Us</h2>
-        <p>Ready to get started? Contact us today for a free consultation!</p>
-        <div class="contact-info">
-            <div class="contact-item"><i class="fas fa-phone"></i><span><a href="tel:+27651878469" style="color: inherit; text-decoration: none;">065 187 8469</a></span></div>
-            <div class="contact-item"><i class="fas fa-envelope"></i><span><a href="mailto:sirplumb.info@gmail.com" style="color: inherit; text-decoration: none;">sirplumb.info@gmail.com</a></span></div>
-            <div class="contact-item"><i class="fab fa-facebook"></i><span><a href="https://www.facebook.com/share/17FqGTxvK5/?mibextid=wwXIfr" target="_blank" style="color: inherit; text-decoration: none;">Facebook</a></span></div>
-            <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>South Africa</span></div>
-        </div>
-    </section>
-    
-    <footer>
-        <p>&copy; 2026 Sirplumb Plumbing Solutions. All rights reserved. | Professional plumbing services in South Africa</p>
-    </footer>
-    
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-    </script>
+      </div>
+      <div style="text-align:center;">
+        <img src="https://media.base44.com/images/public/69cdab6a03a7c5762e21e886/67668ae0d_6239956434888101962.jpg" alt="Sirplumb logo" style="width:100%;max-width:300px;border-radius:16px;box-shadow:0 14px 36px rgba(14,76,146,.15);margin:0 auto;" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec sec-light" id="contact">
+  <div class="inner">
+    <div class="sec-head center">
+      <span class="sec-label">Get In Touch</span>
+      <h2>Ready to help.</h2>
+    </div>
+    <div class="con-grid">
+      <a href="tel:0000000000" class="con-card">
+        <div class="ci">📞</div><div class="cl">Call Us</div>
+        <div class="cv" style="color:var(--blue);">000 000 0000</div>
+      </a>
+      <a href="https://wa.me/27000000000?text=Hi%20Sirplumb%2C%20I%20need%20a%20plumber." target="_blank" class="con-card">
+        <div class="ci">💬</div><div class="cl">WhatsApp</div>
+        <div class="cv" style="color:#25D366;">Chat Now</div>
+      </a>
+      <a href="mailto:info@sirplumb.co.za" class="con-card">
+        <div class="ci">✉️</div><div class="cl">Email</div>
+        <div class="cv" style="color:var(--blue);">info@sirplumb.co.za</div>
+      </a>
+    </div>
+    <div class="cta-box">
+      <h3>Don't wait — call Sirplumb today.</h3>
+      <p>Free quote, no obligation.</p>
+      <div class="cta-btns">
+        <a href="tel:0000000000" class="btn btn-lg" style="background:#fff;color:var(--blue);font-family:'Montserrat',sans-serif;font-weight:700;">📞 Call Now</a>
+        <a href="https://wa.me/27000000000?text=Hi%20Sirplumb%2C%20I%20need%20a%20plumber." target="_blank" class="btn btn-green btn-lg">💬 WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <img src="https://media.base44.com/images/public/69cdab6a03a7c5762e21e886/67668ae0d_6239956434888101962.jpg" alt="Sirplumb" />
+    <div class="foot-links">
+      <a href="#services">Services</a>
+      <a href="#work">Our Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="foot-copy">© 2026 Sirplumb Plumbing Solutions</div>
+  </div>
+</footer>
+
+<script>window.addEventListener('scroll',()=>document.getElementById('mm').classList.remove('open'));</script>
 </body>
 </html>
